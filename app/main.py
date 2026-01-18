@@ -12,6 +12,11 @@ app = FastAPI(
 )
 app.include_router(user_router)
 
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to FastAPI with Docker Compose!"}
+
 @app.get("/scalar")
 def get_scalar():
     return get_scalar_api_reference(
