@@ -1,0 +1,24 @@
+[project]
+name = "fastapi-docker-compose"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.18.1",
+    "bson>=0.5.10",
+    "fastapi[standard]>=0.128.0",
+    "psycopg2-binary>=2.9.11",
+    "pydantic-settings>=2.12.0",
+    "ruff>=0.14.13",
+    "sqlmodel>=0.0.31",
+    "uvicorn>=0.40.0",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 120
+lint.select = ["E", "W", "F", "I"]
+exclude = ["alembic"]
