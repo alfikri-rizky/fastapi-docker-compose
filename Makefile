@@ -3,4 +3,4 @@ lint:
 	uv run ruff check . --fix
 
 dev:
-	uv tun uvicorn app.main:app --reload
+	uv run uvicorn app.main:app --reload

@@ -1,6 +1,20 @@
-def main():
-    print("Hello from fastapi-docker-compose!")
+from fastapi import FastAPI
+from scalar_fastapi.scalar_fastapi import get_scalar_api_reference
 
+from app.core.settings import settings
+from app.routes.user_routes import user_router
 
-if __name__ == "__main__":
-    main()
+app = FastAPI(
+    title=settings.APP_NAME,
+    docs_url=settings.DOCS_URL,
+    redoc_url=settings.REDOCS_URL,
+    openapi_url=settings.OPENAPI_URL,
+)
+app.include_router(user_router)
+
+@app.get("/scalar")
+def get_scalar():
+    return get_scalar_api_reference(
+        title=settings.APP_NAME,
+        openapi_url=settings.OPENAPI_URL,
+    )
