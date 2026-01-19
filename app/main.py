@@ -15,7 +15,7 @@ app.include_router(user_router)
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to FastAPI with Docker Compose! asdasd"}
+    return {"message": "Welcome to FastAPI with Docker Compose! YOLOLOLO"}
 
 @app.get("/scalar")
 def get_scalar():
